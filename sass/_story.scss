@@ -119,5 +119,22 @@
         box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
       }
     }
+
+    &.dark {
+      background-color: #708090;
+      h3 {
+        color: #ffffff;
+      }
+      h2 {
+        color: #add8e6;
+      }
+      p {
+        color: #e0e0e0;
+      }
+      button {
+        background-color: #cccccc;
+        color: #333333;
+      }
+    }
   }
 }

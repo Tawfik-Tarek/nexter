@@ -93,4 +93,9 @@
       grid-column: 8 / -1;
     }
   }
+
+  &.dark{
+    background-color: $dark-bg;
+  }
+
 }

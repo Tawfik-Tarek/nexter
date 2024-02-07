@@ -105,5 +105,15 @@
         box-shadow: 0 1rem 2rem rgba(#000, 0.2);
       }
     }
+    &.dark {
+      background-color: #70809a;
+      svg:not(.home__like){
+        fill: blanchedalmond;
+      }
+      .home__btn {
+        background-color: black;
+        color: white;
+      }
+    }
   }
 }

@@ -93,4 +93,42 @@
       margin-top: 0.5rem;
     }
   }
+
+  .changeMoodButton {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+
+    &__icon {
+      font-size: 42px;
+      cursor: pointer;
+      z-index: 11;
+      position: fixed;
+
+      &.dark {
+        color: $color-grey-light-1;
+      }
+    }
+
+    @media only screen and (max-width: $breakpoint-large) {
+      font-size: 32px;
+      margin-top: -28px;
+      margin-right: 15px;
+      justify-content: flex-end;
+
+      &__icon {
+        font-size: 32px;
+      }
+    }
+  }
+  &.dark {
+    background-color: $dark-bg;
+
+    .bg,
+    .sidebar_ul {
+      background-color: $dark-bg;
+    }
+  }
 }

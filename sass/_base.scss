@@ -12,6 +12,8 @@ $color-grey-dark-2: #6d5d4b;
 
 $header-bg: $color-primary;
 
+$dark-bg:rgba($color: #0c021d, $alpha: 0.9);
+
 // FONT VARIABLES
 $font-primary: "Nunito", sans-serif;
 $font-display: "Josefin Sans", sans-serif;
@@ -86,4 +88,10 @@ a {
 ::selection {
   color: $color-grey-light-1;
   background: $color-primary;
+}
+
+.darkMode {
+  background-color:$dark-bg ;
+  color: $color-grey-light-1;
+  transition: all 0.5s;
 }
