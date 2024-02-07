@@ -1,0 +1,123 @@
+@use "./base" as *;
+
+.story {
+  &__pictures {
+    background-color: $color-primary;
+    grid-column: full-start / col-end 4;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    z-index: 1;
+    background-image: url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column: full-start / full-end;
+      margin-bottom: 4rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+      z-index: -1;
+    }
+  }
+
+  &__img--1 {
+    width: 100%;
+    grid-column: 2 / 6;
+    grid-row: 2 / 6;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__img--2 {
+    width: 115%;
+    grid-column: 4 / 8;
+    grid-row: 4 / 6;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.2);
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-row: 1 / -1;
+      grid-column: 4 / -1;
+      width: 80%;
+      height: 50%;
+    }
+  }
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6rem 8vw;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-column: full-start / full-end;
+      grid-row: 5 / 6;
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+      grid-row: 5 / span 2;
+    }
+
+    & h4 {
+      font-size: 1.9rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $color-primary;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    & h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $color-grey-dark-2;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-family: $font-primary;
+    }
+
+    & p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    button {
+      background-color: $color-primary;
+      color: $color-grey-light-1;
+      border: none;
+      border-radius: 100px;
+      font-family: $font-primary;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+      }
+
+      &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+      }
+    }
+  }
+}

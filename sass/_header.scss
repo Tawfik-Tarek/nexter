@@ -1,0 +1,101 @@
+@use "./base" as *;
+
+.header {
+  background-image: url("../img/hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  grid-column: full-start / col-end 6;
+  position: relative;
+  z-index: -2;
+  padding: 8rem {
+    top: 4rem;
+  }
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(6rem, max-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-row-gap: 1.5rem;
+  justify-content: center;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding: 4rem {
+      top: 2rem;
+    }
+    grid-column: full-start / full-end;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $color-secondary;
+    opacity: 0.92;
+    z-index: -1;
+  }
+
+  &__logo {
+    height: 3rem;
+    justify-self: center;
+  }
+
+  .heading-3 {
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 1rem;
+  }
+
+  &__btn {
+    justify-self: start;
+    align-self: start;
+    box-shadow: 0 1rem 2rem rgba(#000, 0.4);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1.5rem 4rem rgba(#000, 0.4);
+    }
+  }
+
+  &__seenon-text {
+    text-align: center;
+    color: $color-grey-light-2;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    align-items: center;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 1px;
+      width: calc(40% - 2rem);
+      background-color: white;
+    }
+
+    &::after {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    max-width: 120rem;
+    margin: 0 auto;
+    img {
+      display: block;
+      max-height: 2.5rem;
+      max-width: 100%;
+      margin-left: 20px;
+      filter: brightness(70%);
+    }
+  }
+}
